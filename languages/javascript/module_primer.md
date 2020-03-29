@@ -207,9 +207,36 @@ sayHello();
 sayGoodbye();
 // => Goodbye
 ```
->
+> Unfortunately, the native module format is not yet supported by all browsers.
+#
+## Module Loaders vs Module Bundlers
+
+### Module Loaders
+interprets and loads a module written in a certain module format.
+ > ! *Runs at RUNTIME*
+- you load the module loader in the browser
+- you tell the module loader which main app file to load
+- the module loader downloads and interprets the main app file
+- the module loader downloads files as needed
+-
+*Example*: **RequireJS, SystemJS**
+
+### Module Bundlers
+ *" module bundler replaces a module loader !!"*
+
+ in contrast to a module loader, a module bundler runs at
+ build time
+
+- you run the module bundler to generate a bundle file at build time (e.g. bundle.js)
+- you load the bundle in the browser
+
+# 
 
 ## ***Facts and Misconceptions cleared***
 
 > CommonJS and AMD are specifications (or formats) on how modules and their dependencies should be declared in javascript applications. ***RequireJS*** is a script loader library that is AMD compliant, ***curljs*** being another example.
+
+***RequireJS***: loader for modules in AMD format
+
+***SystemJS***: loader for modules in AMD, CommonJS, UMD or System.register format
 
