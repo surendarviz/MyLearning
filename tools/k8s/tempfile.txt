@@ -1,0 +1,23 @@
+Servers
+Master 34.71.235.123
+Slaves 35.223.137.218, 35.193.142.87
+
+apt-get update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo swapon -s
+sudo swapoff -a
+#Make a comment on the SWAP partition type.
+## #/dev/mapper/hakase--labs--vg-swap_1 none            swap    sw              0       0
+## Restart the machine to set swap changes
+sudo reboot
+sudo apt install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+cd /etc/apt/
+sudo vim sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+sudo apt update
+sudo apt install -y kubeadm kubelet kubectl
+
+sudo kubeadm init --pod-network-cidr=10.244.10.0/16 --apiserver-advertise-address=10.0.15.10 --kubernetes-version "1.11.0"
