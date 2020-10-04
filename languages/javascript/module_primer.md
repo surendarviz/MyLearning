@@ -230,7 +230,7 @@ interprets and loads a module written in a certain module format.
 - you run the module bundler to generate a bundle file at build time (e.g. bundle.js)
 - you load the bundle in the browser
 
-# 
+#
 
 ## ***Facts and Misconceptions cleared***
 

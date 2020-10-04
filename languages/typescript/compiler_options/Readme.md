@@ -7,5 +7,5 @@
  - Options inside an **IDE**
  - Build tasks
  - Inside **tsconfig.json** file
- - 
+ -
 

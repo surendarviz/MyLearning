@@ -57,3 +57,18 @@ EOF
 #### Install kubeadm, Kubelet And Kubectl
 
 `apt-get install -y kubelet kubeadm kubectl `
+
+#### Updating Kubernetes Configuration
+` nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf`
+
+Add below line at hte end of last env varaible in conf file
+`Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs”`
+
+
+#### Only For Kubernetes Master VM (kmaster)
+
+`kubeadm init --apiserver-advertise-address=<ip-address-of-kmaster-vm> --pod-network-cidr=192.168.0.0/16`
+
+### ***References***
+[Edureka Blog](https://www.edureka.co/blog/install-kubernetes-on-ubuntu)
+
